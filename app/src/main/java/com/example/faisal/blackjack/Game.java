@@ -38,6 +38,10 @@ public class Game {
     //   return cardRules.get(card.getRank());
     // }
 
+    public Deck getDeck() {
+        return this.deck;
+    }
+
     public void addPlayer(Player player) {
         this.players.add(player);
     }

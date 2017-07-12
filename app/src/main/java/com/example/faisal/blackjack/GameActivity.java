@@ -18,7 +18,7 @@ public class GameActivity extends AppCompatActivity {
 
         dealer_cards = (TextView) findViewById(R.id.view_dealer_cards);
 
-
+        game.getDeck().shuffle();
     }
 
 
