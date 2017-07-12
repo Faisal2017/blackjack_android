@@ -89,18 +89,18 @@ public class Game {
 
     public String compareHands(Player dealer, Player player2) {
 
-        ArrayList<Card> player1Hand = dealer.getHand();
+        ArrayList<Card> dealerHand = dealer.getHand();
         ArrayList<Card> player2Hand = player2.getHand();
 
-        int player1Score = checkValue(player1Hand);
+        int dealerScore = checkValue(dealerHand);
         int player2Score = checkValue(player2Hand);
 
-        if (player1Score == player2Score) {
+        if (dealerScore == player2Score) {
             return "It's A Draw!";
-        } else if (player1Score > player2Score) {
-            return "Dealer wins all your money";
+        } else if (dealerScore > player2Score) {
+            return "Dealer Wins All Your Money!";
         } else {
-            return "You have won!";
+            return "You Won!";
         }
     }
 

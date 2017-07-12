@@ -36,28 +36,26 @@ public class GameActivity extends AppCompatActivity {
         int dealerValue = game.checkValue(dealer.getHand());
 
         dealer_cards.setText(dealer1.toString() + "\n" + dealer2.toString() + "\n" + "Score : " +
-        dealerValue);
+                dealerValue);
 
         game.dealCardFromDeck(player);
         game.dealCardFromDeck(player);
 
         Card player1 = player.getHand().get(0);
         Card player2 = player.getHand().get(1);
+        int playerValue = game.checkValue((player.getHand()));
 
-        player_cards.setText(player1.toString() + "\n" + player2.toString());
+        player_cards.setText(player1.toString() + "\n" + player2.toString() + "\n" + "Score : " +
+                playerValue);
 
 //        winners = new ArrayList<Player>(game.compareHands());
 //        String win = game.checkWinner(winners);
 //        resultText.setText(win);
 
 
-        String winner= game.compareHands(dealer, player);
+        String winner = game.compareHands(dealer, player);
         resultText.setText(winner);
     }
-
-
-
-
 
 
 }
