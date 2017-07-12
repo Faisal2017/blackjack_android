@@ -33,8 +33,10 @@ public class GameActivity extends AppCompatActivity {
 
         Card dealer1 = dealer.getHand().get(0);
         Card dealer2 = dealer.getHand().get(1);
+        int dealerValue = game.checkValue(dealer.getHand());
 
-        dealer_cards.setText(dealer1.toString() + "\n" + dealer2.toString());
+        dealer_cards.setText(dealer1.toString() + "\n" + dealer2.toString() + "\n" + "Score : " +
+        dealerValue);
 
         game.dealCardFromDeck(player);
         game.dealCardFromDeck(player);

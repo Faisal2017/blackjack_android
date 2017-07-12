@@ -79,7 +79,8 @@ public class Game {
 
     public String checkWinner(ArrayList<Player> winners) {
         if (winners.size() == 1) {
-            return "The winner is " + winners.get(0).getName() + " with a score of " + checkValue(winners.get(0).getHand());
+            return "The winner is " + winners.get(0).getName() + " with a score of "
+                    + checkValue(winners.get(0).getHand());
         } else if (winners.size() == 2) {
             return "It's a draw, the score is " + checkValue(winners.get(0).getHand());
         }
