@@ -18,7 +18,7 @@ public class Game {
         this.players = new ArrayList<Player>();
         cardRules = new HashMap<Enum, Integer>();
 
-        cardRules.put(Rank.ACE, 1);
+        cardRules.put(Rank.ACE, 11);
         cardRules.put(Rank.TWO, 2);
         cardRules.put(Rank.THREE, 3);
         cardRules.put(Rank.FOUR, 4);
