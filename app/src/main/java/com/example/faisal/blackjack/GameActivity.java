@@ -11,8 +11,11 @@ public class GameActivity extends AppCompatActivity {
     Game game = new Game();
     Player dealer = new Player("dealer");
     Player player = new Player("player");
+
+    ArrayList<Player> winners;
     TextView dealer_cards;
     TextView player_cards;
+    TextView resultText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,7 @@ public class GameActivity extends AppCompatActivity {
 
         dealer_cards = (TextView) findViewById(R.id.view_dealer_cards);
         player_cards = (TextView) findViewById(R.id.view_player_cards);
+        resultText = (TextView) findViewById(R.id.show_result);
 
         game.getDeck().shuffle();
 
@@ -39,6 +43,14 @@ public class GameActivity extends AppCompatActivity {
         Card player2 = player.getHand().get(1);
 
         player_cards.setText(player1.toString() + "\n" + player2.toString());
+
+//        winners = new ArrayList<Player>(game.compareHands());
+//        String win = game.checkWinner(winners);
+//        resultText.setText(win);
+
+
+        String winner= game.compareHands(dealer, player);
+        resultText.setText(winner);
     }
 
 

@@ -61,28 +61,46 @@ public class Game {
         deck.removeCard(0);
         player.addCardToHand(dealtCard);
     }
-
-    public ArrayList<Player> compareHands() {
-        int counter = checkValue(players.get(0).getHand());
-        ArrayList<Player> winners = new ArrayList<Player>();
-        winners.add(players.get(0));
-
-        if (checkValue(players.get(1).getHand()) == counter){
-            winners.add(players.get(1));
-        } else if (checkValue(players.get(1).getHand()) > counter) {
-            winners.remove(0);
-            winners.add(players.get(1));
-        }
-        return winners;
-    }
+//
+//    public ArrayList<Player> compareHands() {
+//        int counter = checkValue(players.get(0).getHand());
+//        ArrayList<Player> winners = new ArrayList<Player>();
+//
+//        winners.add(players.get(0));
+//
+//        if (checkValue(players.get(1).getHand()) == counter){
+//            winners.add(players.get(1));
+//        } else if (checkValue(players.get(1).getHand()) > counter) {
+//            winners.remove(0);
+//            winners.add(players.get(1));
+//        }
+//        return winners;
+//    }
 
     public String checkWinner(ArrayList<Player> winners) {
-        if(winners.size() == 1) {
+        if (winners.size() == 1) {
             return "The winner is " + winners.get(0).getName() + " with a score of " + checkValue(winners.get(0).getHand());
-        } else if(winners.size() == 2) {
+        } else if (winners.size() == 2) {
             return "It's a draw, the score is " + checkValue(winners.get(0).getHand());
         }
         return null;
+    }
+
+    public String compareHands(Player dealer, Player player2) {
+
+        ArrayList<Card> player1Hand = dealer.getHand();
+        ArrayList<Card> player2Hand = player2.getHand();
+
+        int player1Score = checkValue(player1Hand);
+        int player2Score = checkValue(player2Hand);
+
+        if (player1Score == player2Score) {
+            return "It's A Draw!";
+        } else if (player1Score > player2Score) {
+            return "Dealer wins all your money";
+        } else {
+            return "You have won!";
+        }
     }
 
 
